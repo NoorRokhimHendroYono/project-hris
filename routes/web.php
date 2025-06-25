@@ -103,12 +103,12 @@ Route::prefix('admin')->middleware('admin')->name('admin.')->group(function () {
     // Admin CRUD
     Route::get('admins', [AdminController::class,'list'])->name('admins.list');
     Route::get('admins/{id}/edit', [AdminController::class,'edit'])->name('admins.edit');
-    Route::get('admins/{id}', [AdminController::class,'update'])->name('admins.update');
+    Route::put('admins/{id}', [AdminController::class,'update'])->name('admins.update');
     Route::delete('admins/{id}', [AdminController::class,'destroy'])->name('admins.destroy');
 
     // Profil Admin
     Route::get('profil', [AdminController::class,'profil'])->name('profil');
-    Route::post('profil/update', [AdminController::class,'updateProfil'])->name('admins.update');
+    Route::post('profil/update', [AdminController::class,'updateProfil'])->name('profil.update');
 
     // Security (Ganti Password)
     Route::get('security', [AdminController::class,'security'])->name('security');
