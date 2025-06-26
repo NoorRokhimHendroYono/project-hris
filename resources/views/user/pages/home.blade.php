@@ -423,7 +423,7 @@
               class="w-[350px]"
             /> -->
 
-                        <div class="w-[350px] h-[400px] bg-neutral-400" style="background-image: url('assets/src/banerskntry1.png')"></div> {{-- BANER PICTURE ABOUT || BLANK GRAY --}}
+                        <div class="w-[350px] h-[400px] bg-neutral-400" style="background-image: url('assets/src/banerskntry1.png')"></div> {{-- BANER PICTURE ABOUT || BLANK GRAY --}} {{-- Before : class="w-[350px] h-[400px] bg-neutral-400" --}}
                     </div>
 
                     <div class="text-justify mb-5">
