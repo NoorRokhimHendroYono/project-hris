@@ -26,6 +26,7 @@ class Lowongan extends Model
         'requirement',
         'lokasi',
         'status',
+        'link',
     ];
 
     protected static function boot()

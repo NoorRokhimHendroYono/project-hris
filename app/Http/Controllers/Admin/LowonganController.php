@@ -47,6 +47,7 @@ class LowonganController extends Controller
             'lokasi'        => 'nullable|max:255',
             'status'        => 'required|in:aktif,non-aktif',
             'slug'          => 'nullable|unique:lowogans,slug',
+            'link'          => 'nullable|url',
         ]);
 
         // dd($request->category_id);
@@ -63,6 +64,7 @@ class LowonganController extends Controller
             'requirement'   => $request->requirement,
             'lokasi'        => $request->lokasi,
             'status'        => $request->status,
+            'link'          => $request->link,
         ]);
 
         return redirect()->route('admin.lowongan.index')->with('success', 'Lowongan berhasil ditambahkan!');
@@ -87,6 +89,7 @@ class LowonganController extends Controller
             'requirement'   => 'required',
             'lokasi'        => 'nullable|max:255',
             'status'        => 'required|in:aktif,non-aktif',
+            'link'          => 'nullable|url',
         ]);
 
         $lowongan = Lowongan::findOrFail($id);

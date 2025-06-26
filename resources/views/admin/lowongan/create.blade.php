@@ -112,6 +112,12 @@
                                 </select>
                             </div>
 
+                            {{-- Fitur tambahan biar Admin Flexible upload Link GForm Lowongan --}}
+                            <div class="form-group mb-3">
+                                <label for="link">Link Google Form (Optional)</label>
+                                <input type="text" name="link" class="form-control shadow-sm shadow-secondary" value="{{ old('link', $lowongan->link ?? '') }}">
+                            </div>
+
                             <button type="submit" class="btn btn-primary mt-4 shadow-sm shadow-secondary">
                                 <i class="bi bi-save"></i> Upload
                             </button>

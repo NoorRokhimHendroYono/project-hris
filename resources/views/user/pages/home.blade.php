@@ -423,7 +423,7 @@
               class="w-[350px]"
             /> -->
 
-                        <div class="w-[350px] h-[400px] bg-neutral-400" style="background-image: url('assets/src/banerskntry1.png')"></div> {{-- BANER PICTURE ABOUT || BLANK GRAY --}} {{-- Before : class="w-[350px] h-[400px] bg-neutral-400" --}}
+                        <div class="w-[200px] h-[400px] sm:h-[400px] lg:h-[450px] bg-cover bg-center rounded-xl shadow lg:pr-4" style="background-image: url('{{ asset('assets/src/banerskntry1-upscaled.png') }}')" aria-label="Gedung PT. Sukun"></div> {{-- BANER PICTURE ABOUT || BLANK GRAY --}} {{-- Before : class="w-[350px] h-[400px] bg-neutral-400" --}} {{-- After : class="w-full h-[300px] sm:h-[400px] lg:h-[500px] bg-cover bg-center" --}}
                     </div>
 
                     <div class="text-justify mb-5">
@@ -520,7 +520,7 @@
 
         <section class="mx-5 mx-auto my-20 bg-white">
             <div class="max-w-screen-lg mx-auto">
-                <div class="bg-[url('https://static.vecteezy.com/system/resources/previews/014/031/972/non_2x/abstract-modern-wave-graphic-background-blue-background-abstract-wave-background-design-dark-poster-blue-background-illustration-vector.jpg')] bg-cover bg-center overflow-hidden my-10 mx-5 rounded-2xl animate-bg-wave">
+                <div class="bg-[url('https://static.vecteezy.com/system/resources/previews/014/031/972/non_2x/abstract-modern-wave-graphic-background-blue-background-abstract-wave-background-design-dark-poster-blue-background-illustration-vector.jpg')] bg-cover bg-center overflow-hidden my-10 mx-5 rounded-2xl animate-bg-wave"> {{-- Before : class="bg-[url('https://static.vecteezy.com/system/resources/previews/014/031/972/non_2x/abstract-modern-wave-graphic-background-blue-background-abstract-wave-background-design-dark-poster-blue-background-illustration-vector.jpg')] bg-cover bg-center overflow-hidden my-10 mx-5 rounded-2xl animate-bg-wave" --}}
                     <!-- <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 mx-10 py-10"> -->
                     <div class="flex flex-col lg:flex-row mx-10 py-10 gap-y-5 justify-between items-center">
                         <div class="flex justify-center items-center lg:basis-1/2">

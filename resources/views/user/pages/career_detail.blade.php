@@ -237,25 +237,28 @@
                             {{-- Tombol Daftar menuju GoogleForm 📝 --}}
                             {{-- Tombol Mengarah ke GoogleForm untuk calon pelamar kerja🏢 --}}
                             {{-- Nanti GoogleForm nya di ganti dari Perusahaan --}}
-                            <a href="https://forms.gle/your-google-form-link" target="_blank"
-                                class="bg-blue-800 text-white font-semibold text-normal md:text-base py-3 px-6 rounded-lg shadow hover:bg-blue-900 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                {{-- href="#"></a> --}}
-                            <!-- <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            class="h-5 w-5 inline-block mr-2"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M3 10l9-6 9 6-9 6-9-6zm0 6l9 6 9-6"
-                                            />
-                                        </svg> -->
-                            Daftar
-                            </a>
+                            
+                            @if($lowongan->link)
+                                <a href="{{ $lowongan->link }}" target="_blank" {{-- Before : href="https://forms.gle/your-google-form-link" --}}
+                                    class="bg-blue-800 text-white font-semibold text-normal md:text-base py-3 px-6 rounded-lg shadow hover:bg-blue-900 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    {{-- href="#"></a> --}}
+                                <!-- <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="h-5 w-5 inline-block mr-2"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M3 10l9-6 9 6-9 6-9-6zm0 6l9 6 9-6"
+                                                />
+                                            </svg> -->
+                                    Daftar
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>
