@@ -300,12 +300,12 @@
 
                 <div></div>
 
-                <div class="flex flex-col justify-center items-center space-y-3 mt-10 lg:mt-0">
+                <div class="flex flex-col justify-center items-end space-y-3 mt-10 lg:mt-0"> {{-- items-center --}}
                     <div class="font-['Rubik']">
                         <h4 class="text-4xl text-white font-bold">Temukan Kami di</h4>
                     </div>
 
-                    <div class="flex flex-row space-x-5 items-end justify-center">
+                    <div class="flex flex-row space-x-5"> {{--  items-end justify-center --}}
                         <a href="https://www.instagram.com/pt.sukun" target="_blank"
                             class="flex items-center gap-x-2">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor"
