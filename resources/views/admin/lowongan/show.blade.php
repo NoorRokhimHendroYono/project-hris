@@ -105,6 +105,15 @@
                         </div>
                     @endif
 
+                    @if ($lowongan->link)
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Link Formulir Pendaftaran</label><br>
+                            <a href="{{ $lowongan->link }}" target="_blank" class="btn btn-sm btn-outline-info shadow-sm">
+                                {{ $lowongan->link }}
+                            </a>
+                        </div>
+                    @endif
+
                     <!-- <p><strong>Status:</strong>  -->
                         
                     <!-- </p> -->

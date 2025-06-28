@@ -40,10 +40,8 @@ class CategoryController extends Controller
         return redirect()->route('admin.category.index')->with('success', 'Category diperbarui!');
     }
 
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        $category = Category::findOrFail($id);
-
         // Cek apakah kategori ini sedang digunakan oleh lowongan
         $jumlahLowongan = Lowongan::where('category_id', $category->id)->count();
 
@@ -52,6 +50,6 @@ class CategoryController extends Controller
         }
 
         $category->delete();
-        return redirect()->route('category.index')->with('success', 'Kategori berhasil dihapus.');
+        return redirect()->route('admin.category.index')->with('success', 'Kategori berhasil dihapus.');
     }
 }
