@@ -28,18 +28,3 @@
         </div>
     </div>
 @endsection
-
-{{--
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>500 - Mazer Admin Dashboard</title>
-
-
-</head>
-
-<body>
-    <script src="assets/static/js/initTheme.js"></script>
-
-</body>
---}}

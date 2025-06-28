@@ -415,7 +415,7 @@
         <section class="mx-5 mx-auto mt-10 my-20 relative bg-cover bg-center" style="background-image: url('assets/src/banerskn3.png')"> {{-- BANER BG ABOUT --}}
             <!-- <section class="mx-5 mx-auto mt-10 my-20 relative bg-neutral-50"> -->
             <div class="max-w-screen-lg mx-auto">
-                <div class="mx-5 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 justify-center items-center">
+                <div class="mx-5 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 justify-center items-center gap-8">
                     <div class="">
                         <!-- <img
               src="https://visionaryconsulting.id/assets/images/vc2.png"

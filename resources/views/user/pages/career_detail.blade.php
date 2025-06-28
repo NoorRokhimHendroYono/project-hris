@@ -25,7 +25,7 @@
     <nav id="main-navbar"
         class="fixed start-0 top-0 z-20 w-full border-0 border-gray-200 bg-blue-900 transition-colors duration-300 dark:border-gray-600 dark:bg-gray-900 text-slate-800 shadow-lg"> {{-- Saran Dosen Pembimbing bagian Header di kasih pembatas biar gak nyatu dengan Body Sectionnya | text-slate-800 shadow-lg (cuma sementara harusnya fixed, setelah di scroll hilang...) --}}
         <div class="mx-auto flex max-w-screen-lg flex-wrap items-center justify-between px-5 py-5">
-            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <a href="{{ route('user.home') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img src="{{ asset('/assets/src/sukun.png') }}" class="h-11" alt="Sukun Logo" />
                 <!-- <span class="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">Flowbite</span> -->
             </a>
