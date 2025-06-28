@@ -612,7 +612,7 @@
                     </div>
 
                     <div class="flex flex-row space-x-5">
-                        <a href="https://www.instagram.com/visionaryconsultingid" target="_blank"
+                        <a href="https://www.instagram.com/pt.sukun" target="_blank"
                             class="flex items-center gap-x-2">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -630,7 +630,7 @@
                             </svg>
                         </a>
 
-                        <a href="https://www.linkedin.com/company/visionaryconsultingid" target="_blank"
+                        <a href="https://www.linkedin.com/company/pt-sukun" target="_blank"
                             class="flex items-center gap-x-2">
                             <svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg">
