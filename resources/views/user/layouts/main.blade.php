@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Beranda')</title>
-    <!-- CSS -->
+    
+    {{-- Title --}}
+    <title>@yield('title', 'Karier | Sukun Sigaret')</title>
+    
+    {{-- Favicon --}}
+    <link rel="shortcut icon" href="{{ asset('assets/src/sukun.png') }}" type="image/png" />
+
+    {{-- CSS --}}
      <link rel="stylesheet" href="{{ asset('css/style.css') }}">
      @stack('styles')
 

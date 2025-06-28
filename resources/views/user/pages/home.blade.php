@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 
-
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{-- Title --}}
+    <title>@yield('title', 'Beranda | Sukun Sigaret')</title>
+
+    {{-- Favicon --}}
+    <link rel="shortcut icon" href="{{ asset('assets/src/sukun.png') }}" type="image/png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

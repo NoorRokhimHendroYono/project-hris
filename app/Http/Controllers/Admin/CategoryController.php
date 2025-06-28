@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Lowongan;
 
 class CategoryController extends Controller
 {
@@ -39,9 +40,18 @@ class CategoryController extends Controller
         return redirect()->route('admin.category.index')->with('success', 'Category diperbarui!');
     }
 
-    public function destroy(Category $category)
+    public function destroy($id)
     {
+        $category = Category::findOrFail($id);
+
+        // Cek apakah kategori ini sedang digunakan oleh lowongan
+        $jumlahLowongan = Lowongan::where('category_id', $category->id)->count();
+
+        if ($jumlahLowongan > 0) {
+            return redirect()->back()->with('error', 'Kategori tidak bisa dihapus karena masih digunakan oleh lowongan.');
+        }
+
         $category->delete();
-        return back()->with('success', 'Category dihapus!');
+        return redirect()->route('category.index')->with('success', 'Kategori berhasil dihapus.');
     }
 }
