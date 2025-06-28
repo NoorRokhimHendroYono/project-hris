@@ -109,3 +109,17 @@
     </div>
     <x-alert />
 @endsection
+
+{{-- Buat Test x-alert aja 
+@section('script')
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Ini manual dari index',
+        text: 'Berarti SweetAlert jalan!',
+        timer: 9000,
+        showConfirmButton: false
+    });
+</script>
+@endsection
+--}}

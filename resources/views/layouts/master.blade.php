@@ -277,6 +277,7 @@
     {{-- Section & Custom Script | Script Tambahan dari Setiap Halaman --}}
     @yield('script')
     @stack('scripts')
+    <x-alert />
     
 </body>
 </html>

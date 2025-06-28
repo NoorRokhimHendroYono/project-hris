@@ -245,7 +245,7 @@
                     </a>
                 @empty
                     {{-- Message lama | <p class="text-center col-span-3 text-slate-500">Belum ada lowongan tersedia.</p> --}}
-                    <p class="text-center col-span-3 text-slate-500">
+                    <p class="text-center col-span-3 text-slate-500 mt-10">
                         Tidak ditemukan lowongan untuk
                         @if(request('search')) keyword "<strong>{{ request('search') }}</strong>" @endif
                         @if(request('kategori')) di kategori "<strong>{{ request('kategori') }}</strong>" @endif
