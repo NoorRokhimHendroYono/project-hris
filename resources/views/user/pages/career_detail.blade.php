@@ -9,7 +9,7 @@
     <title>@yield('title', 'Detail Lowongan | Sukun Sigaret')</title>
 
     {{-- Favicon --}}
-    <link rel="shortcut icon" href="{{ asset('assets/src/sukun.png') }}" type="image/png" />
+    <link rel="shortcut icon" href="{{ asset('assets/src/sukun_favicon.png') }}" type="image/png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Karier | Sukun Sigaret</title>
 
-    <link rel="shortcut icon" href="{{ asset('assets/src/sukun.png') }}" type="image/png" />
+    <link rel="shortcut icon" href="{{ asset('assets/src/sukun_favicon.png') }}" type="image/png" />
     {{-- Bootstrap 4 --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 

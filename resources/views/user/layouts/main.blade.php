@@ -8,7 +8,7 @@
     <title>@yield('title', 'Karier | Sukun Sigaret')</title>
     
     {{-- Favicon --}}
-    <link rel="shortcut icon" href="{{ asset('assets/src/sukun.png') }}" type="image/png" />
+    <link rel="shortcut icon" href="{{ asset('assets/src/sukun_favicon.png') }}" type="image/png" />
 
     {{-- CSS --}}
      <link rel="stylesheet" href="{{ asset('css/style.css') }}">
