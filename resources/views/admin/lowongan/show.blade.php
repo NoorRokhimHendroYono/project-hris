@@ -95,13 +95,13 @@
 
                     <div class="mt-3">
                         <p><strong>Deskripsi :</strong></p>
-                        <div>{!! $lowongan->deskripsi !!}</div>
+                        <div class="summernote-content">{!! $lowongan->deskripsi !!}</div>
                     </div>
 
                     @if ($lowongan->requirement)
                         <div class="mt-3">
                             <p><strong>Requirement :</strong></p>
-                            <div>{!! $lowongan->requirement !!}</div>
+                            <div class="summernote-content">{!! $lowongan->requirement !!}</div>
                         </div>
                     @endif
 

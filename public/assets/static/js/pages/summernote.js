@@ -1,7 +1,7 @@
-$("#summernote").summernote({
-  tabsize: 2,
-  height: 120,
-})
+// $("#summernote").summernote({
+//   tabsize: 2,
+//   height: 120,
+// })
 $("#hint").summernote({
   height: 100,
   toolbar: false,

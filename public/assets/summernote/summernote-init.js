@@ -1,14 +1,28 @@
 $(document).ready(function () {
-    $('.summernote').summernote({
-        placeholder: "Tulis konten di sini...",
-        tabsize: 2,
-        height: 300,
-        callbacks: {
-            onImageUpload: function (files) {
-                for (let i = 0; i < files.length; i++) {
-                    uploadImage(files[i], this);
+    $('.summernote').each(function () {
+        // Cegah Duplikat Summernote
+        if (!$(this).next().hasClass('note-editor')) {
+            $(this).summernote({
+                placeholder: "Tulis konten di sini...",
+                tabsize: 2,
+                height: 300,
+                toolbar: [
+                    ['style', ['style', 'fontname', 'fontsize']], // Grup untuk style, font, ukuran
+                    ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']], // Grup untuk format teks
+                    ['color', ['color']], // Grup untuk warna teks
+                    ['para', ['ul', 'ol', 'paragraph', 'height']], // Grup untuk paragraf (termasuk bullet/numbered list)
+                    ['insert', ['link', 'picture', 'video', 'table', 'hr']], // Grup untuk sisipkan (link, gambar, video, tabel, garis horizontal)
+                    ['view', ['fullscreen', 'codeview', 'help']] // Grup untuk tampilan (fullscreen, code view, help)
+                ],
+                // *** Akhir BAGIAN PENTING ***
+                callbacks: {
+                    onImageUpload: function (files) {
+                        for (let i = 0; i < files.length; i++) {
+                            uploadImage(files[i], this);
+                        }
+                    }
                 }
-            }
+            });
         }
     });
 });

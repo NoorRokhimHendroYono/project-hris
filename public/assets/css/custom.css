@@ -90,6 +90,42 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Bulletlist di detail/show summernote */
+.summernote-content ul,
+.summernote-content ol {
+    padding-left: 1.25rem; /* spacing list */
+    margin-left: 1.25rem;
+}
+
+.summernote-content ul {
+    list-style-type: disc;
+}
+
+.summernote-content ol {
+    list-style-type: decimal;
+}
+
+.summernote-content li {
+    margin-bottom: 0.25rem; /* spacing antar item */
+}
+
+/* Bulletlist di form-control-editor summernote - Solusi */
+.note-editable ul {
+    list-style-type: disc !important; /* Gunakan !important jika masih tertimpa */
+    padding-left: 1.25rem !important;
+    margin-left: 0 !important; /* Pastikan margin kiri tidak menghilangkan padding */
+}
+
+.note-editable ol {
+    list-style-type: decimal !important;
+    padding-left: 1.25rem !important;
+    margin-left: 0 !important;
+}
+
+.note-editable li {
+    margin-bottom: 0.25rem;
+}
+
 
 /* Bikin input file Summernote jadi seperti tombol */
 /* .note-modal input[type="file"] {

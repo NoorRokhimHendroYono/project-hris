@@ -96,7 +96,9 @@ class HomeController extends Controller
 
     public function careerDetail($slug)
     {
-        $lowongan = Lowongan::where('slug', $slug)->firstOrFail();
+        $lowongan = Lowongan::where('slug', $slug)
+            ->where('status', 'aktif')
+            ->firstOrFail();
 
         return view('user.pages.career_detail', compact('lowongan'));
     }

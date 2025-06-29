@@ -49,7 +49,11 @@ class LowonganUserController extends Controller
     // 🟢 Detail Lowongan
     public function show($slug)
     {
-        $lowongan = Lowongan::with('category')->where('slug', $slug)->firstOrFail();
+        // $lowongan = Lowongan::with('category')->where('slug', $slug)->firstOrFail();
+        $lowongan = Lowongan::with('category')
+            ->where('slug', $slug)
+            ->where('status', 'aktif')
+            ->firstOrFail();
         return view('user.pages.career_detail', compact('lowongan'));
     }
 
