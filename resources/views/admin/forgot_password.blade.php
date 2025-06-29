@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="{{ asset('assets/compiled/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/compiled/css/app-dark.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/compiled/css/auth.css') }}">
+
+    {{-- SweetAlert2 Local CSS --}}
+    <link rel="stylesheet" href="{{ asset('assets/extensions/sweetalert2/sweetalert2.min.css') }}"></link>
 </head>
 
 <body>
@@ -37,6 +40,13 @@
                         </div>
                         <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Send</button>
                     </form>
+
+                    {{-- SwertAlert2 Local JS --}}
+                    <script src="{{ asset('assets/extensions/sweetalert2/sweetalert2.min.js') }}"></script>
+
+                    {{-- Custom Alert (kalau pakai komponen Blade juga oke) --}}
+                    @include('components.alert')
+                    
                     <div class="text-center mt-5 text-lg fs-4">
                         <p class='text-gray-600'>Remember your account? <a href="auth-login.html" class="font-bold">Log in</a>.
                         </p>

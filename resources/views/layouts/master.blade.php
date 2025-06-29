@@ -38,6 +38,9 @@
     {{-- Summernote CSS (CDN) --}}
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css"> --}}
 
+    {{-- SweetAlert2 Local CSS --}}
+    <link rel="stylesheet" href="{{ asset('assets/extensions/sweetalert2/sweetalert2.min.css') }}">
+
     {{-- Custom CSS harus paling akhir --}}
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 
@@ -189,10 +192,21 @@
     {{-- jQuery (WAJIB paling atas sebelum summernote) --}}
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
-    {{-- SweetAlert2 --}}
+    {{-- SweetAlert2 CDN --}}
+    {{-- 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    --}}
 
+    {{-- SwertAlert2 Local JS --}}
+    <script src="{{ asset('assets/extensions/sweetalert2/sweetalert2.min.js') }}"></script>
+
+    {{-- Custom Alert (kalau pakai komponen Blade juga oke) --}}
+    @include('components.alert')
+
+    {{-- Custom Alert (kalau pakai komponen Blade juga oke) --}}
+    @include('components.alert')
+    
     {{-- Bootstrap 5 JS --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 

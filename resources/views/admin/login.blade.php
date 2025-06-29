@@ -11,23 +11,30 @@
     <link rel="stylesheet" href="{{ asset('assets/compiled/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/compiled/css/app-dark.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/compiled/css/auth.css') }}">
+
+    {{-- SweetAlert2 Local CSS --}}
+    <link rel="stylesheet" href="{{ asset('assets/extensions/sweetalert2/sweetalert2.min.css') }}"></link>
 </head>
 
 <body>
     <script src="{{ asset('assets/static/js/initTheme.js') }}"></script>
     <div id="auth">
 
-        {{-- @if ($errors->any())
+        {{--
+         @if ($errors->any())
             <div class="alert alert-danger">
                 {{ $errors->first() }}
             </div>
-        @endif --}}
+        @endif 
+        --}}
 
+        {{-- 
         @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
         @endif
+        --}}
 
         <div class="row h-100">
             <div class="col-lg-5 col-12">
@@ -66,7 +73,10 @@
                     </form>
 
                     {{-- SweetAlert2 CDN --}} {{-- Gara-gara belum ada CDN ini Toastnya gak ke load pas login gagal --}}
-                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+
+                    {{-- SwertAlert2 Local JS --}}
+                    <script src="{{ asset('assets/extensions/sweetalert2/sweetalert2.min.js') }}"></script>
 
                     {{-- Custom Alert (kalau pakai komponen Blade juga oke) --}}
                     @include('components.alert')
