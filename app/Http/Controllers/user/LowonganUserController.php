@@ -49,11 +49,15 @@ class LowonganUserController extends Controller
     // 🟢 Detail Lowongan
     public function show($slug)
     {
-        // $lowongan = Lowongan::with('category')->where('slug', $slug)->firstOrFail();
         $lowongan = Lowongan::with('category')
-            ->where('slug, $slug')
+            ->where('slug', $slug)
             ->where('status', 'aktif')
-            ->firstOrFail();
+            ->first();
+
+        if (!$lowongan) {
+            return response()->view('errors.lowongan_tidak_tersedia');
+        }
+        
         return view('user.pages.career_detail', compact('lowongan'));
     }
 
@@ -61,12 +65,7 @@ class LowonganUserController extends Controller
     public function home()
     {
         $categories = Category::all();
-        // $lowongans = Lowongan::latest()->take(3)->with('category')->get(); // 3 Lowongan terbaru
-        $lowongans = Lowongan::where('status', 'aktif')
-            ->latest()
-            ->take(3)
-            ->with('category')
-            ->get();
+        $lowongans = Lowongan::latest()->take(3)->with('category')->get(); // 3 Lowongan terbaru
         return view('user.pages.home', compact('categories', 'lowongans'));
     }
 
@@ -74,7 +73,7 @@ class LowonganUserController extends Controller
     public function careers(Request $request)
     {
         $categories = Category::all(); // 🟢 WAJIB ADA
-        $query = Lowongan::with('category')->where('status', 'aktif');
+        $query = Lowongan::with('category');
 
         if ($request->filled('search')) {
             $query->where('judul', 'like', '%' . $request->search . '%');

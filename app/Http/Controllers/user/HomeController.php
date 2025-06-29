@@ -98,8 +98,12 @@ class HomeController extends Controller
     {
         $lowongan = Lowongan::where('slug', $slug)
             ->where('status', 'aktif')
-            ->firstOrFail();
+            ->first();
 
+        if (!$lowongan) {
+            return response()->view('errors.lowongan_tidak_tersedia'); // tampilkan halaman custom
+        }
+        
         return view('user.pages.career_detail', compact('lowongan'));
     }
 
