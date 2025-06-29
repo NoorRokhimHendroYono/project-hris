@@ -25,7 +25,12 @@
                     <img class="img-error" src="{{ asset('assets/compiled/svg/error-403.svg') }}" alt="Not Found">
                     <h1 class="error-title">Forbidden</h1>
                     <p class="fs-5 text-gray-600">You are unauthorized to see this page.</p>
-                    <a href="{{ route('user.home') }}" class="btn btn-lg btn-outline-primary mt-3 shadow">Go Home</a>
+                    
+                    @if(request()->is('admin/*'))
+                        <a href="{{ route('admin.dashboard') }}" class="btn btn-lg btn-outline-primary mt-3 shadow-sm shadow-secondary">Go Home</a>
+                    @else
+                        <a href="{{ route('user.home') }}" class="btn btn-outline-primary mt-3 shadow-sm shadow-secondary">Go Home</a>
+                    @endif
                 </div>
             </div>
         </div>
