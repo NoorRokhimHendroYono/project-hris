@@ -32,8 +32,6 @@
         <div class="row h-100">
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
-                    
-                    @include('components.alert')
 
                     <div class="auth-logo">
                         <a href="{{ route('admin.index') }}">
@@ -66,6 +64,13 @@
                         </div>
                         <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Log in</button>
                     </form>
+
+                    {{-- SweetAlert2 CDN --}} {{-- Gara-gara belum ada CDN ini Toastnya gak ke load pas login gagal --}}
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+                    {{-- Custom Alert (kalau pakai komponen Blade juga oke) --}}
+                    @include('components.alert')
+
                     <div class="text-center mt-5 text-lg fs-4">
                         <p class="text-gray-600">Belum punya akun? 
                             <a href="{{ route('admin.register') }}" class="font-bold">Daftar</a>
@@ -76,13 +81,13 @@
                     </div>
                 </div>
             </div>
-            {{-- Ada BLANK BIRU PERSEGI GANGGU di sebelah Kanan Page Login
+            {{-- Ada BLANK BIRU PERSEGI GANGGU di sebelah Kanan Page Login --}}
             <div class="col-lg-7 d-none d-lg-block">
                 <div id="auth-right">
 
                 </div>
             </div>
-            --}}
+            {{-- --}}
         </div>
 
     </div>
