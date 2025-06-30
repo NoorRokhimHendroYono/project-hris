@@ -79,7 +79,7 @@ text  : "{{ session('toast')['text'] }}",
 
 @if (session('toast'))
     <script>
-        window.addEventListener('DOMContentLoaded', function () { {{-- HELL NAH --}}
+        window.addEventListener('DOMContentLoaded', function () { {{-- HELL NAH, kurang ini doang untuk load Alertnya --}}
             const Toast = Swal.mixin({
                 toast               : true,
                 icon                : "{{ session('toast')['icon'] }}",
