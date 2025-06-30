@@ -144,6 +144,7 @@
     {{-- @include('components.summernote') --}}
 @endsection
 
+{{-- Quill Form Editor
 @push('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -200,6 +201,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 @endpush
+--}}
+{{-- --------------------------------------------------------------------------------------------------- --}}
 {{-- 
 Buat jaga-jaga
 @push('scripts')
