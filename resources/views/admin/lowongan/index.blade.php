@@ -169,7 +169,7 @@
                                 toast               : true,
                                 position            : 'top-end',
                                 icon                : 'success',
-                                title               : res.mrssage,
+                                title               : res.message,
                                 showConfirmButton   : false,
                                 timer               : 2000
                             });

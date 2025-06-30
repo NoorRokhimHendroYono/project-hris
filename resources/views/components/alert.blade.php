@@ -79,23 +79,24 @@ text  : "{{ session('toast')['text'] }}",
 
 @if (session('toast'))
     <script>
-        const Toast = Swal.mixin({
-            toast               : true,
-            icon                : "{{ session('toast')['icon'] }}",
-            title               : "{{ session('toast')['title'] }}",
-            text                : "{{ session('toast')['text'] }}",
-            position            : 'top-end',
-            showConfirmButton   : false,
-            timer               : 1700,
-            timerProgressBar    : true, // <-- INI nambah progress bar
-            didOpen             : (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        });
-        Toast.fire({
-            //
+        window.addEventListener('DOMContentLoaded', function () { {{-- HELL NAH --}}
+            const Toast = Swal.mixin({
+                toast               : true,
+                icon                : "{{ session('toast')['icon'] }}",
+                title               : "{{ session('toast')['title'] }}",
+                text                : "{{ session('toast')['text'] }}",
+                position            : 'top-end',
+                showConfirmButton   : false,
+                timer               : 1700,
+                timerProgressBar    : true, // <-- INI nambah progress bar
+                didOpen             : (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            });
+            Toast.fire({
+                //
+            });
         });
     </script>
 @endif
-

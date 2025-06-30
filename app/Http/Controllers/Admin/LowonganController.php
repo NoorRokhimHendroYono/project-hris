@@ -23,7 +23,7 @@ class LowonganController extends Controller
             $query->where('category_id', $request->category_id);
         }
 
-        $lowongans = $query->with('category')->orderBy('id', 'asc')->get();
+        $lowongans = $query->with('category')->orderBy('id', 'desc')->get(); // "asc" untuk lowongan pertama adalah yang terlama, "desc" untuk lowongan pertama adalah yang terbaru
 
         return view('admin.lowongan.index', compact('lowongans', 'categories'));
     }
@@ -67,7 +67,12 @@ class LowonganController extends Controller
             'link'          => $request->link,
         ]);
 
-        return redirect()->route('admin.lowongan.index')->with('success', 'Lowongan berhasil ditambahkan!');
+        // return redirect()->route('admin.lowongan.index')->with('success', 'Lowongan berhasil ditambahkan!');
+        return redirect()->route('admin.lowongan.index')->with('toast', [
+            'icon'  => 'success',
+            'title' => 'Berhasil',
+            'text'  => 'Lowongan berhasil ditambahkan!'
+        ]);
     }
 
     public function edit($id)
