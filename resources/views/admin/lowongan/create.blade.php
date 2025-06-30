@@ -87,14 +87,22 @@
                             <div class="form-group mb-3">
                                 <label>Deskripsi (Job Desk)</label>
                                 <div class="shadow-sm shadow-secondary">
-                                    <textarea name="deskripsi" class="form-control summernote">{{ old('deskripsi', $lowongan->deskripsi ?? '') }}</textarea> {{-- id="summernote-deskripsi" | class="form-control tinymce" | class="form-control" --}}
+                                    <div id="quill-deskripsi" class="quill-editor">
+                                        {!! old('deskripsi', $lowongan->deskripsi ?? '') !!}
+                                    </div>
+                                    <input type="hidden" name="deskripsi" id="deskripsi">
+                                    <!-- <textarea name="deskripsi" class="form-control summernote">{{ old('deskripsi', $lowongan->deskripsi ?? '') }}</textarea> {{-- id="summernote-deskripsi" | class="form-control tinymce" | class="form-control" --}} -->
                                 </div>
                             </div>
 
                             <div class="form-group mb-3">
                                 <label>Reqirement / Syarat</label>
                                 <div class="shadow-sm shadow-secondary">
-                                    <textarea name="requirement" class="form-control summernote">{{ old('requirement', $lowongan->requirement ?? '') }}</textarea> {{-- id="summernote-requirement" | class="form-control tinymce" | class="form-control" --}}
+                                    <div id="quill-requirement" class="quill-editor">
+                                        {!! old('requirement', $lowongan->requirement ?? '') !!}
+                                    </div>
+                                    <input type="hidden" name="requirement" id="requirement">
+                                    <!-- <textarea name="requirement" class="form-control summernote">{{ old('requirement', $lowongan->requirement ?? '') }}</textarea> {{-- id="summernote-requirement" | class="form-control tinymce" | class="form-control" --}} -->
                                 </div>
                             </div>
 

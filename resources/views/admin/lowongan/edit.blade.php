@@ -85,7 +85,11 @@
                             <div class="form-group mt-3">
                                 <label>Deskripsi (Job Desk)</label>
                                 <div class="shadow-sm shadow-secondary">
-                                    <textarea name="deskripsi" class="form-control summernote">{{ old('deskripsi', $lowongan->deskripsi) }}</textarea> {{-- id="summernote-deskripsi" | class="form-control tinymce" | --}}
+                                    <div id="quill-requirement" class="quill-editor">
+                                        {!! old('requirement', $lowongan->requirement ?? '') !!}
+                                    </div>
+                                    <input type="hidden" name="requirement" id="requirement">
+                                    <!-- <textarea name="deskripsi" class="form-control summernote">{{ old('deskripsi', $lowongan->deskripsi) }}</textarea> {{-- id="summernote-deskripsi" | class="form-control tinymce" | --}} -->
                                 </div>
                             </div>
 
@@ -93,7 +97,11 @@
                             <div class="form-group mb-3">
                                 <label>Requirement / Syarat</label>
                                 <div class="shadow-sm shadow-secondary">
-                                    <textarea name="requirement" class="form-control summernote">{{ old('requirement', $lowongan->requirement) }}</textarea> {{-- id="summernote-requirement" | class="form-control tinymce" |  --}}
+                                    <div id="quill-requirement" class="quill-editor">
+                                        {!! old('requirement', $lowongan->requirement ?? '') !!}
+                                    </div>
+                                    <input type="hidden" name="requirement" id="requirement">
+                                    <!-- <textarea name="requirement" class="form-control summernote">{{ old('requirement', $lowongan->requirement) }}</textarea> {{-- id="summernote-requirement" | class="form-control tinymce" |  --}} -->
                                 </div>
                             </div>
 
