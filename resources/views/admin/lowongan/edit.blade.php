@@ -85,11 +85,11 @@
                             <div class="form-group mt-3">
                                 <label>Deskripsi (Job Desk)</label>
                                 <div class="shadow-sm shadow-secondary">
-                                    <div id="quill-requirement" class="quill-editor">
-                                        {!! old('requirement', $lowongan->requirement ?? '') !!}
+                                    <!-- <div id="quill-deskripsi" class="quill-editor" style="height: 200px">
+                                        {!! old('deskripsi', $lowongan->deskripsi ?? '') !!}
                                     </div>
-                                    <input type="hidden" name="requirement" id="requirement">
-                                    <!-- <textarea name="deskripsi" class="form-control summernote">{{ old('deskripsi', $lowongan->deskripsi) }}</textarea> {{-- id="summernote-deskripsi" | class="form-control tinymce" | --}} -->
+                                    <input type="hidden" name="deskripsi" id="deskripsi"> -->
+                                    <textarea name="deskripsi" class="form-control summernote">{{ old('deskripsi', $lowongan->deskripsi) }}</textarea> {{-- id="summernote-deskripsi" | class="form-control tinymce" | --}}
                                 </div>
                             </div>
 
@@ -97,11 +97,11 @@
                             <div class="form-group mb-3">
                                 <label>Requirement / Syarat</label>
                                 <div class="shadow-sm shadow-secondary">
-                                    <div id="quill-requirement" class="quill-editor">
+                                    <!-- <div id="quill-requirement" class="quill-editor" style="height: 200px">
                                         {!! old('requirement', $lowongan->requirement ?? '') !!}
                                     </div>
-                                    <input type="hidden" name="requirement" id="requirement">
-                                    <!-- <textarea name="requirement" class="form-control summernote">{{ old('requirement', $lowongan->requirement) }}</textarea> {{-- id="summernote-requirement" | class="form-control tinymce" |  --}} -->
+                                    <input type="hidden" name="requirement" id="requirement"> -->
+                                    <textarea name="requirement" class="form-control summernote">{{ old('requirement', $lowongan->requirement) }}</textarea> {{-- id="summernote-requirement" | class="form-control tinymce" |  --}}
                                 </div>
                             </div>
 
@@ -144,6 +144,62 @@
     {{-- @include('components.summernote') --}}
 @endsection
 
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    let quillDeskripsi = new Quill('#quill-deskripsi', {
+        theme: 'snow',
+        placeholder: 'Tulis deskripsi...',
+        modules: {
+            toolbar: [
+                [{ font: [] }, { size: [] }],
+                ["bold", "italic", "underline", "strike"],
+                [{ color: [] }, { background: [] }],
+                [{ script: "super" }, { script: "sub" }],
+                [
+                    { list: "ordered" },
+                    { list: "bullet" },
+                    { indent: "-1" },
+                    { indent: "+1" },
+                ],
+                ["direction", { align: [] }],
+                ["link", "image", "video"],
+                ["clean"],
+            ],
+        }
+    });
+
+    let quillRequirement = new Quill('#quill-requirement', {
+        theme: 'snow',
+        placeholder: 'Tulis requirement...',
+        modules: {
+            toolbar: [
+                [{ font: [] }, { size: [] }],
+                ["bold", "italic", "underline", "strike"],
+                [{ color: [] }, { background: [] }],
+                [{ script: "super" }, { script: "sub" }],
+                [
+                    { list: "ordered" },
+                    { list: "bullet" },
+                    { indent: "-1" },
+                    { indent: "+1" },
+                ],
+                ["direction", { align: [] }],
+                ["link", "image", "video"],
+                ["clean"],
+            ],
+        }
+    });
+
+    // Sync value sebelum submit
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (e) {
+        document.querySelector('#deskripsi').value = quillDeskripsi.root.innerHTML.trim();
+        document.querySelector('#requirement').value = quillRequirement.root.innerHTML.trim();
+    });
+});
+</script>
+@endpush
 {{-- 
 Buat jaga-jaga
 @push('scripts')

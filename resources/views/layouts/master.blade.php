@@ -35,11 +35,14 @@
     {{-- CSS CDN AOS ke layout admin --}}
     <!-- <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/dist/aos.css"> -->
 
+    {{-- Trix Editor CDN --}}
+    <!-- <link rel="stylesheet" href="https://unpkg.com/trix@2.1.0/dist/trix.css"> -->
+
     <!-- Quill CSS CDN SEMENTARA -->
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <!-- <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"> -->
     
     {{-- Summernote CSS (local) --}}
-    <!-- <link rel="stylesheet" href="{{ asset('assets/summernote/summernote-lite.min.css') }}"> -->
+    <link rel="stylesheet" href="{{ asset('assets/summernote/summernote-lite.min.css') }}">
     {{-- Summernote CSS (CDN) --}}
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css"> --}}
 
@@ -232,21 +235,28 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
+    {{-- Editor.js CDN --}}
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.8.1"></script> -->
+
+    {{-- Trix Editor CDN --}}
+    <!-- <script src="https://unpkg.com/trix@2.1.0/dist/trix.umd.min.js"></script> -->
+ 
     <!-- Quill JS CDN SEMENTARA -->
-    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script> -->
 
     {{-- Summernote JS (Local) --}}
-    <!-- <script src="{{ asset('assets/summernote/summernote-lite.min.js') }}"></script> -->
+    <script src="{{ asset('assets/summernote/summernote-lite.min.js') }}"></script>
     {{-- Summernote JS (CDN) --}} 
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.js"></script> --}}
     {{-- Inisialisasi --}}
-    <!-- <script src="{{ asset('assets/summernote/summernote-init.js') }}"></script> -->
+    <script src="{{ asset('assets/summernote/summernote-init.js') }}"></script>
 
     {{-- Need: Apexcharts / Optional: Apexcharts untuk dashboard statistik --}}
     <!-- <script src="{{ asset('assets/extensions/apexcharts/apexcharts.min.js') }}"></script> -->
     <!-- <script src="{{ asset('assets/static/js/pages/dashboard.js') }}"></script> -->
 
-    <script>
+    {{-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         const quillDeskripsi = new Quill('#quill-deskripsi', {
             theme: 'snow',
@@ -283,7 +293,7 @@
             document.querySelector('#requirement').value = quillRequirement.root.innerHTML;
         });
     });
-    </script>
+    </script> --}}
 
     {{-- Logout Button Confirmation --}}
     <script>
