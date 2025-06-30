@@ -24,7 +24,7 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="{{ route('admin.index') }}">
+                        <a href="#"> {{-- Bahaya kalau di kasih route langsung masuk Dashboard 🤣 | href="{{ route('admin.index') }}" --}}
                             <img src="{{ asset('/assets/src/sukun.png') }}" alt="Logo" />
                         </a> {{-- LOGO di PAGE SIGN UP [Logo Sukun : /assets/src/sukun.png] [Logo Mazer : ./assets/compiled/svg/logo.svg] --}}
                     </div>

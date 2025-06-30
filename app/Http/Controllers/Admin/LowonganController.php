@@ -112,7 +112,7 @@ class LowonganController extends Controller
         $lowongan = Lowongan::findOrFail($id);
         $lowongan->delete();
 
-        return redirect()->route('admin.lowongan.index')->with([
+        return redirect()->route('admin.lowongan.index')->with('toast', [
             'icon' => 'success',
             'title' => 'Berhasil!',
             'text' => 'Lowongan berhasil dihapus!'
