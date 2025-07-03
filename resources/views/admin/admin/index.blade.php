@@ -88,12 +88,12 @@
         function confirmDelete(form) {
             event.preventDefault();
             Swal.fire({
-                title: 'Yakin ingin menghapus?',
-                text: "Data admin akan dihapus permanen!",
+                title: 'Delete Account Admin ini?',
+                text: "Data Admin akan dihapus PERMANEN!",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#6c757d',
+                confirmButtonColor: '#d33', // Merah
+                cancelButtonColor: '#6c757d', // Abu-abu
                 confirmButtonText: 'Ya, hapus!',
                 cancelButtonText: 'Batal'
             }).then((result) => {

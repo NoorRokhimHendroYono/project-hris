@@ -64,7 +64,27 @@
             </div>
         </section>
     </div>
-
+    {{-- SweetAlert Confirm Delete --}}
+    <script>
+        function confirmDelete(form) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Delete Catgory ini?',
+                text: "Data Category akan dihapus PERMANEN!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33', // Merah
+                cancelButtonColor: '#6c757d', // Abu-abu
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            });
+            return false;
+        }
+    </script>
     <!-- <a href="{{ route('admin.category.create') }}"
             class="btn icon icon-left btn-outline-primary d-inline-flex align-items-center gap-1">
             <i data-feather="edit"></i>+ Tambah Kategori

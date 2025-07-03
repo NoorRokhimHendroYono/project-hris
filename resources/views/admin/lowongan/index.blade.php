@@ -131,12 +131,12 @@
         function confirmDelete(form) {
             event.preventDefault();
             Swal.fire({
-                title: 'Apakah kamu yakin?',
-                text: "Data akan dihapus Permanen!",
+                title: 'Delete Lowongan ini?',
+                text: "Data Lowongan akan dihapus PERMANEN!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#d33', // Merah
-                cancelButtonColor: '#3085d6', // Biru
+                cancelButtonColor: '#6c757d', // Abu-abu || // '#3085d6', Biru
                 confirmButtonText: 'Ya, hapus!',
                 cancelButtonText: 'Batal'
             }).then((result) => {
