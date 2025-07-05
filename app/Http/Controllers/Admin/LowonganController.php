@@ -36,38 +36,42 @@ class LowonganController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        // dd($request->all());
+        $validated = $request->validate([
             'judul'         => 'required|max:255',
             'tanggal_buka'  => 'required|date',
             'tanggal_tutup' => 'required|date|after_or_equal:tanggal_buka',
             'pengalaman'    => 'required|in:fresh_graduate,experienced',
             'category_id'   => 'required|exists:categories,id',
+            'gambar'        => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'deskripsi'     => 'required',
-            'requirement'   => 'required',
             'lokasi'        => 'nullable|max:255',
             'status'        => 'required|in:aktif,non-aktif',
-            'slug'          => 'nullable|unique:lowogans,slug',
+            'slug'          => 'nullable|unique:lowongans,slug',
             'link'          => 'nullable|url',
         ]);
+
+        // ✅ 🔁 Simpan gambar jika ada
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $namaGambar = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('lowongan'), $namaGambar);
+            $validated['gambar'] = 'lowongan/' . $namaGambar;
+        }
+
+        // ✅ Tambahkan slug 🔁 Buat data lowongan
+        // if (!isset($validated['slug'])) {
+            
+        // }
+        // $validated['slug'] = Str::slug($validated['judul']); // auto generate slug
+        
+        // ✅ Simpan ke database
+        Lowongan::create($validated);
 
         // dd($request->category_id);
         // dd($request->all());
         // Lowongan::create($request->all());
-        Lowongan::create([
-            'judul'         => $request->judul,
-            'slug'          => Str::slug($request->judul),
-            'tanggal_buka'  => $request->tanggal_buka,
-            'tanggal_tutup' => $request->tanggal_tutup,
-            'pengalaman'    => $request->pengalaman,
-            'category_id'   => $request->category_id, // ⬅️ WAJIB
-            'deskripsi'     => $request->deskripsi,
-            'requirement'   => $request->requirement,
-            'lokasi'        => $request->lokasi,
-            'status'        => $request->status,
-            'link'          => $request->link,
-        ]);
-
-        // return redirect()->route('admin.lowongan.index')->with('success', 'Lowongan berhasil ditambahkan!');
+        
         return redirect()->route('admin.lowongan.index')->with('toast', [
             'icon'  => 'success',
             'title' => 'Berhasil',
@@ -84,21 +88,29 @@ class LowonganController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $validated = $request->validate([
             'judul'         => 'required|max:255',
             'tanggal_buka'  => 'required|date',
             'tanggal_tutup' => 'required|date|after_or_equal:tanggal_buka',
             'pengalaman'    => 'required|in:fresh_graduate,experienced',
             'category_id'   => 'required|exists:categories,id',
+            'gambar'        => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'deskripsi'     => 'required',
-            'requirement'   => 'required',
             'lokasi'        => 'nullable|max:255',
             'status'        => 'required|in:aktif,non-aktif',
             'link'          => 'nullable|url',
         ]);
 
         $lowongan = Lowongan::findOrFail($id);
-        $lowongan->update($request->all());
+        
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $namaGambar = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('lowongan'), $namaGambar);
+            $validated['gambar'] = 'lowongan/' . $namaGambar;
+        }
+
+        $lowongan->update($validated);
 
         return redirect()->route('admin.lowongan.index')->with('toast', [
             'icon'          => 'success',

@@ -22,6 +22,7 @@ class Lowongan extends Model
         'tanggal_tutup',
         'pengalaman',
         'category_id', // ✅ WAJIB ADA
+        'gambar',
         'deskripsi',
         'requirement',
         'lokasi',

@@ -156,6 +156,11 @@
                     --}}
                     <div class="mb-6 mt-4"> {{-- class="mt-4 prose">{!! $lowongan->deskripsi !!} --}}
                         <h2 class="text-lg font-semibold text-slate-800 mb-2">Deskripsi Pekerjaan📜📃</h2>
+                        @if(!empty($lowongan->gambar) && file_exists(public_path($lowongan->gambar)))
+                            <img src="{{ asset($lowongan->gambar) }}" alt="{{ $lowongan->judul }}" class="img-fluid mb-3 rounded">
+                        @else
+                            <img src="{{ asset('img/default-lowongan.png') }}" alt="No Image" class="img-fluid mb-3 rounded">
+                        @endif
                         <div class="text-slate-700 rich-text leading-relaxed prose prose-slate max-w-none">
                             {!! $lowongan->deskripsi !!}
                         </div>
@@ -166,6 +171,8 @@
                         <h3 class="text-normal font-semibold text-slate-800 mb-1">Requirements:</h3>
                         <p class="text-normal text-slate-700">{!! $lowongan->requirement !!}</p>
                     </div> --}}
+                    
+                    {{-- udah tidak pakai requirement terpisah di FE, jadi satu dengan deskripsi
                     @if ($lowongan->requirement)
                         <div class="mb-6 mt-4">
                             <h2 class="text-lg font-semibold text-slate-800 mb-2">Requirements📝📄</h2>
@@ -174,6 +181,7 @@
                             </div>
                         </div>
                     @endif
+                    --}}
                 </div>
             </div>
 

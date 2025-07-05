@@ -28,7 +28,7 @@
                             </div>
                         @endif
                         {{-- Content Utama --}}
-                        <form action="{{ route('admin.lowongan.store') }}" method="POST">
+                        <form action="{{ route('admin.lowongan.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">
                                 <label>Judul</label>
@@ -86,9 +86,14 @@
 
                             {{-- Upload Gambar (Opsional) --}}
                             <div class="form-group mb-3">
-                                <label for="gambar">Gambar (Opsional)</label>
+                                <label for="gambar" class="form-label">Gambar (Opsional)</label>
                                 <div class="shadow-sm shadow-secondary">
-                                    <input type="file" name="gambar" class="form-control">
+                                    <input type="file" name="gambar" id="gambar" 
+                                        class="form-control @error('gambar') is-invalid @enderror" 
+                                        accept=".jpg,.jpeg,.png">
+                                    @error('gambar')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -103,19 +108,6 @@
                                     <textarea name="deskripsi" class="form-control summernote-form">{{ old('deskripsi', $lowongan->deskripsi ?? '') }}</textarea> {{-- id="summernote-deskripsi" | class="form-control tinymce" | class="form-control" --}}
                                 </div>
                             </div>
-
-                            {{-- Requirement di ketik Manual pada Deskripsi 
-                            <div class="form-group mb-3">
-                                <label>Reqirement / Syarat</label>
-                                <div class="shadow-sm shadow-secondary">
-                                    <!-- <div id="quill-requirement" class="quill-editor" style="height: 200px">
-                                        {!! old('requirement', $lowongan->requirement ?? '') !!}
-                                    </div>
-                                    <input type="hidden" name="requirement" id="requirement"> -->
-                                    <textarea name="requirement" class="form-control summernote">{{ old('requirement', $lowongan->requirement ?? '') }}</textarea> <!-- id="summernote-requirement" | class="form-control tinymce" | class="form-control" -->
-                                </div>
-                            </div>
-                            --}}
 
                             <div class="form-group mb-3">
                                 <label>Penempatan (Lokasi)</label>
