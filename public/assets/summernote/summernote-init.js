@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.summernote').each(function () {
+    $('.summernoteNT').each(function () { //sementara saya ganti ',summernote' jadi ',summernoteNT'
         // Cegah Duplikat Summernote
         if (!$(this).next().hasClass('note-editor')) {
             $(this).summernote({
