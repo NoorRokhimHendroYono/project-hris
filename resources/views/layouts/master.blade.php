@@ -248,7 +248,7 @@
     {{-- Summernote JS (CDN) --}} 
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.js"></script> --}}
     {{-- Inisialisasi --}}
-    <!-- <script src="{{ asset('assets/summernote/summernote-init.js') }}"></script> {{-- sementara saya ganti ',summernote' jadi ',summernoteNT' didalam file -init.js --}}-->
+    <script src="{{ asset('assets/summernote/summernote-init.js') }}"></script> {{-- sementara saya ganti ',summernote' jadi ',summernoteNT' didalam file -init.js --}}
 
     {{-- Need: Apexcharts / Optional: Apexcharts untuk dashboard statistik --}}
     <!-- <script src="{{ asset('assets/extensions/apexcharts/apexcharts.min.js') }}"></script> -->

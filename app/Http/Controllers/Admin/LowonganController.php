@@ -104,6 +104,11 @@ class LowonganController extends Controller
         $lowongan = Lowongan::findOrFail($id);
         
         if ($request->hasFile('gambar')) {
+            // Hapus/replace gambar lama (jika ada gambar lamanya)
+            if ($lowongan->gambar && file_exists(public_path($lowongan->gambar))) {
+                unlink(public_path($lowongan->gambar));
+            }
+
             $file = $request->file('gambar');
             $namaGambar = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('lowongan'), $namaGambar);

@@ -151,10 +151,10 @@
         $('.summernote-form').summernote({
             height  : 300,
             toolbar : [
-                ['style', ['bold', 'italic', 'underline', 'clear', 'strikethrough', 'superscript', 'subscript']],
-                ['font', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph', 'height']],
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear', 'strikethrough', 'superscript', 'subscript']],
+                ['list', ['ul', 'ol']],
+                ['para', [ 'paragraph']],
                 ['view', ['codereview']]
             ]
         });
