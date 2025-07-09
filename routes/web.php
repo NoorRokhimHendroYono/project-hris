@@ -67,8 +67,14 @@ Route::post('admin/login', [AuthController::class,'login'])->name('admin.login.s
 Route::post('admin/logout', [AuthController::class,'logout'])->name('admin.logout');
 
 // Register Admin
-Route::get('admin/register', [AdminAuthController::class,'showRegisterForm'])->name('admin.register');
-Route::post('admin/register', [AdminAuthController::class, 'register'])->name('admin.register.submit');
+// Batasi AKSES From Register hanya untuk admin yang sudah login
+Route::middleware(['auth:amin'])->group(function () {
+    Route::get('admin/register', [AdminAuthController::class, 'showRegisterForm'])->name('admin.register');
+    Route::post('admin/register', [AdminAuthController::class, 'register'])->name('admin.register.submit');
+});
+// Yang ini masih ada celah ketika akses link https://karir.hrdsukun.web.id/admin/register langsung ke direct halaman register 
+// Route::get('admin/register', [AdminAuthController::class,'showRegisterForm'])->name('admin.register');
+// Route::post('admin/register', [AdminAuthController::class, 'register'])->name('admin.register.submit');
 
 // Forgot Password (Coming Soon)
 Route::get('admin/forgot_password', [ForgotPasswordController::class, 'showForgotForm'])->name('admin.forgot');
