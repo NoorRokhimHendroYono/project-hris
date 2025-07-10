@@ -1,5 +1,5 @@
 <header class="navbar">
-    <h1>Admin HRIS</h1>
+    <h1>Admin Portal Karir</h1>
     {{-- Tambah tombol logout dll --}}
     <li class="sidebar-item">
         <form method="POST" action="{{ route('admin.logout') }}">

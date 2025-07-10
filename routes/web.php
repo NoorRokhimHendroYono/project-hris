@@ -66,13 +66,19 @@ Route::get('admin/login', [AuthController::class,'showLoginForm'])->name('admin.
 Route::post('admin/login', [AuthController::class,'login'])->name('admin.login.submit');
 Route::post('admin/logout', [AuthController::class,'logout'])->name('admin.logout');
 
-// Register Admin dengan route Normal/Sebelumnya
+// 1️⃣ Register Admin dengan route Normal/Sebelumnya
 // Route::get('admin/register', [AdminAuthController::class,'showRegisterForm'])->name('admin.register');
 // Route::post('admin/register', [AdminAuthController::class, 'register'])->name('admin.register.submit');
 
-// Register Admin dengan route dirubah biar gak ada orang sembarangan akses
-Route::get('admin/internal-create-admin', [AdminAuthController::class,'showRegisterForm'])->name('admin.internal-create-admin');
-Route::post('admin/internal-create-admin', [AdminAuthController::class, 'register'])->name('admin.internal-create-admin.submit');
+// 2️⃣ Register Admin dengan route dirubah biar gak ada orang sembarangan akses
+// Route::get('admin/internal-create-admin', [AdminAuthController::class,'showRegisterForm'])->name('admin.internal-create-admin');
+// Route::post('admin/internal-create-admin', [AdminAuthController::class, 'register'])->name('admin.internal-create-admin.submit');
+
+// 3️⃣ Tambahkan Middleware admin di route tersebut: Supaya orang yang belum login sebagai admin gak bisa akses walaupun tahu URL-nya.
+Route::middleware(['admin'])->group(function () {
+    Route::get('admin/internal-create-admin', [AdminAuthController::class,'showRegisterForm'])->name('admin.internal-create-admin');
+    Route::post('admin/internal-create-admin', [AdminAuthController::class, 'register'])->name('admin.internal-create-admin.submit');
+});
 
 // Forgot Password (Coming Soon)
 Route::get('admin/forgot_password', [ForgotPasswordController::class, 'showForgotForm'])->name('admin.forgot');

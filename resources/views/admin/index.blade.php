@@ -4,7 +4,7 @@
 
     {{-- Greeting --}}
     <div class="page-heading" data-aos="fade-down" data-aos-delay="50"> {{-- sedikit aos/animate on scroll --}}
-        <h3>Welcome to the HRIS web, {{ session('admin')->name ?? 'Admin' }}! ✨</h3>
+        <h3>Welcome to the Portal Karir web, {{ session('admin')->name ?? 'Admin' }}! ✨</h3>
     </div>
 
     {{-- Statistik Card --}}
