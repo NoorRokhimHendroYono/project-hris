@@ -12,7 +12,7 @@ class AdminAuthController extends Controller
     // Menampilkan form register (opsional jika route pakai closure)
     public function showRegisterForm()
     {
-        return view('admin.register');
+        return view('admin.internal-create-admin');
     }
 
     // Menangani proses pendaftaran admin

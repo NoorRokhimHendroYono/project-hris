@@ -74,7 +74,7 @@
                                 <h4 class="card-title">Manajemen Admin 🧑‍💻</h4>
                             </div>
                             <div class="card-body">
-                                <a href="{{ route('admin.register') }}"
+                                <a href="{{ route('admin.internal-create-admin') }}"
                                     class="btn icon icon-left btn-outline-warning d-inline-flex align-items-center gap-1 shadow-sm shadow-secondary">
                                     <i data-feather="edit"></i>+ Admin Baru{{-- pakai [<span class="fw-bold">+</span> Admin
                                     Baru] kalau teks, sebelumnya | <i data-feather="edit"></i> + Admin Baru --}}

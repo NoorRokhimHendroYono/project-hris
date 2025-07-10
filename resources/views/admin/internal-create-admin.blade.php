@@ -53,7 +53,7 @@
                     <h1 class="auth-title">Sign Up</h1>
                     <p class="auth-subtitle mb-5">Masukkan data untuk register admin ke website HRIS</p>
 
-                    <form action="{{ route('admin.register.submit') }}" method="POST">
+                    <form action="{{ route('admin.internal-create-admin.submit') }}" method="POST">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="email" name="email" class="form-control form-control-xl" placeholder="Email" required>

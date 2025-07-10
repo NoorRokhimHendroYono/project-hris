@@ -26,7 +26,7 @@
                         </form>
 
 
-                        <a href="{{ route('admin.register') }}" class="btn btn-primary shadow-sm shadow-secondary">
+                        <a href="{{ route('admin.internal-create-admin') }}" class="btn btn-primary shadow-sm shadow-secondary">
                             <i class="bi bi-person"></i> + {{-- <i class="bi bi-person-plus"></i> Admin Baru --}}
                         </a>
 
