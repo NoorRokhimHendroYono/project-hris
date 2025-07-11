@@ -39,12 +39,15 @@ text  : "{{ session('toast')['text'] }}",
     </script>
 @endif
 
+{{-- Success Toast --}}
 @if (session('success'))
     <script>
         Swal.fire({
+            toast   : true,
             icon    : 'success',
             title   : 'Berhasil!',
             text    : "{{ session('success') }}",
+            position: 'top-end',
             timer   : 1500,
             timerProgressBar: true,
             showConfirmButton: false,

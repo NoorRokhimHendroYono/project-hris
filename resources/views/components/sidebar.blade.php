@@ -82,7 +82,7 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <form method="POST" action="{{ route('admin.logout') }}" data-aos="fade-right" data-aos-delay="300">
+                    <form id="logout-form" method="POST" action="{{ route('admin.logout') }}" data-aos="fade-right" data-aos-delay="300">
                         @csrf
                         <button type="submit" class="sidebar-link btn btn-link text-start shadow-sm shadow-secondary" {{-- Class Sebelumnya : class="sidebar-link border-0 bg-transparent p-0 ms-2 text-start" --}}
                             style="color: inherit; text-decoration: none; padding:0 1rem; width:100%;">    
