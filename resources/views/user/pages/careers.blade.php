@@ -236,10 +236,17 @@
                             </p>
                             Yang BAWAHNYA ⬇️--}}
 
-                            <td>
-                                {{ $lowongan->tanggal_buka ? \Carbon\Carbon::parse($lowongan->tangga_buka)->format('d M Y') : '-' }}
+                            <td>                            
+                                {{-- Format English 🇬🇧 --}}                       
+                                {{-- 🔍 $lowongan->tangga_buka — itu typo! Harusnya: ✅ $lowongan->tanggal_buka --}}
+                                <!-- {{ $lowongan->tanggal_buka ? \Carbon\Carbon::parse($lowongan->tanggal_buka)->format('d M Y') : '-' }}
                                 -
-                                {{ $lowongan->tanggal_tutup ? \Carbon\Carbon::parse($lowongan->tanggal_tutup)->format('d M Y') : '-' }}
+                                {{ $lowongan->tanggal_tutup ? \Carbon\Carbon::parse($lowongan->tanggal_tutup)->format('d M Y') : '-' }} -->
+                                    
+                                {{-- Format Indonesia 🇮🇩 --}}
+                                {{ \Carbon\Carbon::parse($lowongan->tanggal_tutup)->locale('id')->isoFormat('D MMMM Y') }}
+                                -
+                                {{ \Carbon\Carbon::parse($lowongan->tanggal_buka)->locale('id')->isoFormat('D MMMM Y') }}
                             </td>
                         </div>
                     </a>

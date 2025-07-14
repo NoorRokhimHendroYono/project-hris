@@ -185,11 +185,13 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="400"> {{-- sedikit aos/animate on scroll --}}
                     <div class="float-start">
-                        <p>2025 &copy; Student</p>
+                        <p>2025 &copy; Internship Student from University of Muhammadiyah Kudus </p>
                     </div>
                     <div class="float-end">
-                        <p>Crafted with <span class="text-danger"></span>{{-- <i class="bi bi-heart-fill icon-mid"></i>--}}
-                            by {{-- <a href="https://saugi.me" target="_blank"> --}}🦅Someone {{-- </a> --}}
+                        <p>Crafted {{--  with <span class="text-danger"></span> --}} {{-- <i class="bi bi-heart-fill icon-mid"></i>--}}
+                            by {{-- Sedikit Kejahilan Kecil 👌--}} 
+                            <span id="easter-egg" style="cursor: pointer;">Student</span> {{-- Kalau mau pakai warna | color: #0d6efd;--}}
+                            {{-- Sebelumnya <!-- <a href="https://saugi.me" target="_blank"> --> 🦅Someone <!-- </a> --> --}}
                         </p>
                     </div>
                 </div>
@@ -292,6 +294,28 @@
         });
     });
     </script> --}}
+
+    {{-- script easter egg 🤯 --}}
+    @push('scripts')
+    <script>
+        document.getElementById('easter-egg').addEventListener('click', function () {
+            Swal.fire({
+                title: 'HELL YEAH, YOU GOT THE EASTER EGG🤯🤣',
+                text: 'Thankyou for use this website have a Nice Day✌️✨',
+                width: 600,
+                padding: '3em',
+                color: '#2988cbff',
+                background: '#fff url("https://sweetalert2.github.io/images/trees.png")',
+                backdrop: `
+                    rgba(16, 145, 214, 0.39)
+                    url("https://sweetalert2.github.io/images/nyan-cat.gif")
+                    left top
+                    no-repeat
+                `
+            });
+        });
+    </script>
+    @endpush
 
     {{-- Logout Button Confirmation --}}
     <script>

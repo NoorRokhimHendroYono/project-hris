@@ -133,10 +133,17 @@
                     {{-- ✅ Tanggal --}}
                     <div class="flex items-center gap-2 mb-6 text-slate-600 mt-2"> 📅
                         {{--🔥🔥🔥🔥 <x-icon.calendar class="h-5 w-5"/> | Icon Calendar --}}
-                        <td>
-                            {{ $lowongan->tanggal_buka ? \Carbon\Carbon::parse($lowongan->tangga_buka)->format('d M Y') : '-' }}
+                        <td>                            
+                            {{-- Format English 🇬🇧 --}}                       
+                            {{-- 🔍 $lowongan->tangga_buka — itu typo! Harusnya: ✅ $lowongan->tanggal_buka --}}
+                            <!-- {{ $lowongan->tanggal_buka ? \Carbon\Carbon::parse($lowongan->tanggal_buka)->format('d M Y') : '-' }}
                             -
-                            {{ $lowongan->tanggal_tutup ? \Carbon\Carbon::parse($lowongan->tanggal_tutup)->format('d M Y') : '-' }}
+                            {{ $lowongan->tanggal_tutup ? \Carbon\Carbon::parse($lowongan->tanggal_tutup)->format('d M Y') : '-' }} -->
+                                    
+                            {{-- Format Indonesia 🇮🇩 --}}
+                            {{ \Carbon\Carbon::parse($lowongan->tanggal_tutup)->locale('id')->isoFormat('D MMMM Y') }}
+                            -
+                            {{ \Carbon\Carbon::parse($lowongan->tanggal_buka)->locale('id')->isoFormat('D MMMM Y') }}
                         </td>
                     </div>
 
@@ -158,8 +165,10 @@
                         <h2 class="text-lg font-semibold text-slate-800 mb-2">Deskripsi Pekerjaan📜📃</h2>
                         @if(!empty($lowongan->gambar) && file_exists(public_path($lowongan->gambar)))
                             <img src="{{ asset($lowongan->gambar) }}" alt="{{ $lowongan->judul }}" class="img-fluid mb-3 rounded">
+                        {{-- 
                         @else
                             <img src="{{ asset('img/default-lowongan.png') }}" alt="No Image" class="img-fluid mb-3 rounded">
+                        --}}
                         @endif
                         <div class="text-slate-700 rich-text leading-relaxed prose prose-slate max-w-none">
                             {!! $lowongan->deskripsi !!}

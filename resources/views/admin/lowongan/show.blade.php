@@ -84,31 +84,36 @@
                         {{ $lowongan->lokasi }}
                     </p>
 
+                    {{-- 
                     <p><strong>Kategori :</strong> 
-                        {{-- Pakek BG buat seperti badge
+                        <!-- Pakek BG buat seperti badge
                         <span class="badge bg-info">
                             <i class="bi bi-tags"></i>{{ $lowongan->category->name ?? '-' }} 
-                        </span>
-                        --}}
+                        </span> -->
                         {{ $lowongan->category->name ?? '-' }}
                     </p>
+                    --}}
 
                     <div class="mt-3">
                         <p><strong>Deskripsi :</strong></p>
                         @if(!empty($lowongan->gambar) && file_exists(public_path($lowongan->gambar)))
                             <img src="{{ asset($lowongan->gambar) }}" alt="{{ $lowongan->judul }}" class="img-fluid mb-3 rounded">
+                        {{-- 
                         @else
                             <img src="{{ asset('img/default-lowongan.png') }}" alt="No Image" class="img-fluid mb-3 rounded">
+                        --}}
                         @endif
                         <div class="summernote-content">{!! $lowongan->deskripsi !!}</div>
                     </div>
 
+                    {{-- 
                     @if ($lowongan->requirement)
                         <div class="mt-3">
                             <p><strong>Requirement :</strong></p>
                             <div class="summernote-content">{!! $lowongan->requirement !!}</div>
                         </div>
                     @endif
+                    --}}
 
                     @if ($lowongan->link)
                         <div class="mb-3">
